@@ -1,5 +1,3 @@
-extern crate core;
-
 use std::io::{self, BufRead};
 use std::string::String;
 
