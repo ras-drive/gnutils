@@ -1,3 +1,11 @@
+use md5::{Md5, Digest};
+use hex_literal::hex;
+
 fn main() {
-    println!("Hello, world!");
+    let mut hasher = Md5::new();
+    hasher.update(b"hello world");
+
+    let result = hasher.finalize();
+
+    assert_eq!(result[..], hex!("5eb63bbbe01eeed093cb22bb8f5acdc3"));
 }
